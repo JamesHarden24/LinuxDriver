@@ -1,0 +1,7 @@
+
+Advanced Risc Machines,ltd
+
+v3-->v8 架构相当于建筑的结构设计
+低功耗，低成本
+大量使用寄存器，指令长度固定
+领先的性能/功耗(MIPS/Watt)

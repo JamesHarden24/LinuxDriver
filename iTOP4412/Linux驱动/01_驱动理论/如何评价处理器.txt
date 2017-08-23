@@ -1,0 +1,10 @@
+
+ARM   x86   POWERPC  MIPS
+
+(a)频率
+(b)性能 (MPIS/MHz)
+    -- ARM7 处理速度 0.9MPIS/MHz 常见的主时钟一般为 20MHz--133MHz
+    -- ARM9 处理速度 1.1MPIS/MHz 常见的主时钟一般为 100MHz--233MHz
+    -- Cortex-A9处理器速度 2.5MPIS/MHz 主时钟一般为 1000MHz--1600MHz
+(c)功耗
+(d)面积(成本)晶元
