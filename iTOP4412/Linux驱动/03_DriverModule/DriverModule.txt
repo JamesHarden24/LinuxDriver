@@ -1,0 +1,20 @@
+
+最简Linux驱动
+
+(a)必备头文件
+   Linux头文件位置
+   --类似 #include <linux/module.h>的头文件，它们是在Linux源码目录下的include/linux/module.h
+
+(b)#include <linux/module.h>头文件
+   --所有的Linux代码必须遵循GPL协议
+   --如果你不声明GPL协议，你的模块将无法在Linux中使用
+   --MODULE_LICENSE(_license)添加GPL协议
+   --MODULE_AUTHOR(_author)代码作者
+   
+(c)#include <linux/init.h>
+   --包含初始化宏定义的头文件，代码中的函数module_init和module_exit在此文件中
+   --入口函数module_init(x)
+   --出口函数module_exit(x)
+
+
+

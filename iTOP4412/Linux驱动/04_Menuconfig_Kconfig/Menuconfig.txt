@@ -1,0 +1,10 @@
+      Menuconfig的操作
+(a)Linux编译器通过.config文件确认那些代码编译进内核，那些被裁减掉
+(b)Menuconfig是生成.config的工具
+
+(c)在Linux发展的过程中，配置内核可以使用以下命令：
+    --make config 基于文件的最为传统的配置界面，不推荐使用
+    --make menuconfig 基于文件菜单的配置界面，用的最多
+    --make xconfig 要求QT被安装
+    --make gconfig 要求GTK+被安装
+
