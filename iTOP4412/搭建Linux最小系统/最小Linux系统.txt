@@ -1,0 +1,6 @@
+
+使用搭建好的最小Linux系统，需要四个文件
+(a)u-boot-iTOP4412.bin   如果能进入u-boot下则不用烧写
+(b)zImage
+(c)ramdisk-uboot.img
+(d)system.img

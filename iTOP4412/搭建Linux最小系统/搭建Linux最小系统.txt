@@ -1,0 +1,42 @@
+(a)配置busybox
+    <1>解压busybox
+    <2>make menuconfig
+    <3>配置编译器
+        --Busybox Setting --> Build Options --> Cross Compiler prefix将其设置为
+          arm-none-linux-gnueabi-
+        --返回 Build Options
+    <4>配置二进制文件目录
+        --Installation Options --> BusyBox installation prefix 配置到文件系统目录下
+        --保存退出
+    <5>编译安装
+        --make
+        --make install
+
+(b)完善最下Linux系统的文件
+    <1>进入system目录完善最小系统
+        --创建文件夹 mkdir dev etc lib mnt proc sys tmp var
+    <2>进入新创建的etc目录
+        --创建文件夹 mkdir init.d rc.d 
+    <3>进入新创建的rc.d文件夹
+        --创建文件夹 mkdir init.d
+    <4>返回system目录，进入var
+        --创建目录 
+    <5>进入创建的etc目录
+        --将eth0-setting passwd profile三个文件拷贝进去，将文件的权限改为755
+    <6>进入etc目录下的init.d目录
+        --将ifconfig-eth0和rcS两个文件拷贝进去，将文件的权限设置为755
+    <7>进入etc/rc.d/init.d目录
+        --将netd拷贝进去然后设置权限为 755
+    <8>返回system目录下，进入lib文件夹下
+        --将编译器的库文件拷贝进去
+        --cp /usr/local/arm/***/arm-none-linux-gnuaabi/libc/lib/* ./
+    <9>system制作完成
+
+(c)安装打包软件和编译
+    <1>打包工具使用make_ext4fs
+    <2>进入目录下使用命令编译生成文件系统
+        --make_ext4fs -s -l 314572800 -a root -L linux system.img system
+    <3>
+    <4>
+    
+
