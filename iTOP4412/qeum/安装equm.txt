@@ -1,0 +1,4 @@
+(a)°²×°:
+    apt-get install qemu qemu-system qemu-utils
+
+

@@ -8,3 +8,9 @@
     --make xconfig 要求QT被安装
     --make gconfig 要求GTK+被安装
 
+(d)在Linux源码目录下输入命令 make menuconfig,可以进入配置界面
+    --menuconfig实现的代码在源码"scripts"目录下
+    
+    使用 '/'进行搜索
+
+(e)
