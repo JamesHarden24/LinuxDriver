@@ -1,0 +1,28 @@
+          驱动注册
+(1)注册设备使用结构体platform_driver,该结构体在头文件"include/linux/platform_device.h"中。
+
+struct platform_driver {
+    int (*probe)(struct platform_device *);
+    int (*remove)(struct platform_device *);
+    void (*shutdown)(struct platform_device *);
+    int (*suspend)(struct platform_device *, pm_message_t state);
+    int (*resume)(struct platform_device *);
+    struct device_driver driver;
+    const struct platform_device_id *id_table;
+};
+
+extern int platform_driver_register(struct platform_driver *);     //注册驱动
+extern void platform_driver_unregister(struct platform_driver *);  //移除驱动
+
+(a)驱动常见的几种状态，初始化，移除，休眠，复位
+    <1>probe函数
+        platform_match函数匹配之后，驱动调用的初始化函数
+    <2>remove函数
+        移除驱动函数
+    <3>suspend函数
+        悬挂(休眠)驱动函数
+    <4>resume函数
+        休眠后恢复驱动
+    <5>device_driver数据结构的两个参数
+        name和注册设备name要一致
+        owner一般赋值THIS_MOUDLE

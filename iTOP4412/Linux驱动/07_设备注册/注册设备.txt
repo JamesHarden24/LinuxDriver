@@ -1,0 +1,25 @@
+          注册设备
+(1)注册设备使用结构体platform_device,该结构体在头文件"include/linux/platform_device.h"中。
+struct platform_device {
+    const char	* name;  //设备名称，在sys/device会显示
+    int		id;            //设备id，用于插入总线并且具有相同name的设备编号。如果只有一个设备
+                         //的ID则为-1
+    struct device	dev;   //结构体中内嵌的device结构体
+    u32		num_resources; //设备使用资源的数目
+    struct resource	* resource; //设备使用的资源数组
+
+    const struct platform_device_id	*id_entry;
+
+    /* MFD cell pointer */
+    struct mfd_cell *mfd_cell;
+
+    /* arch specific additions */
+    struct pdev_archdata	archdata;
+};
+
+(a)在文件/arch/arm/mach-exynos/mach-iTop4412.c中定义结构体
+
+(2)          
+
+
+
