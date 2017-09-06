@@ -1,0 +1,29 @@
+         杂项设备
+
+    杂项设备可以说是对一部分字符设备的封装，还有一部分不好归类的驱动
+也归到杂项设备。
+    杂项设备初始化部分源文件"drivers/char/misc.c"，这一部分通过Makefile
+可知，是强制编译的。
+
+结构体miscdevice以及注册函数
+struct miscdevice  {
+    int minor;        //次设备号
+    const char *name; //生成设备节点的名称
+    const struct file_operations *fops;  //指向一个设备节点文件
+    struct list_head list;
+    struct device *parent;
+    struct device *this_device;
+    const char *nodename;
+    mode_t mode;
+};
+ 
+extern int misc_register(struct miscdevice * misc);
+extern int misc_deregister(struct miscdevice *misc);
+
+
+对于：struct file_operations
+必选的参数是：
+    -- .owner 一般是THIS_MODULE
+    -- .open  打开文件函数
+    -- .release 关闭文件函数
+    
